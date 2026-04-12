@@ -17,6 +17,7 @@ function calculateNext(curPos) {
     return nextPositions;
 }
 
+
 /**
  * 
  * @param {number[]} orig 
@@ -25,18 +26,36 @@ function calculateNext(curPos) {
 function knightMoves(orig, dest) {
     const visited = new Set();
     const queue = [{ place: orig, path: [orig] }];
+    let found = false;
+    let nextPositions = [];
     while (queue.length != 0) {
         const current = queue.shift();
         if (current['place'][0] == dest[0] && current['place'][1] == dest[1]) return current["path"];
         visited.add(current['place'] + "");
 
-        const nextPositions = calculateNext(current['place']);
-        queue.push(...nextPositions.reduce((acc, cur) => {
-            if (!visited.has(cur + ""))
-                acc.push({ place: cur, path: [...current['path'], cur] });
-            return acc;
-        }, []));
+        if (found)
+            nextPositions = [];
+        else
+            nextPositions = calculateNext(current['place']);
+
+        const filteredPostions = nextPositions.filter((cur) => {
+            return !(visited.has(cur + ""))
+        });
+
+        for (const pos of nextPositions) {
+            visited.add(pos + ""); //Se a posição já apareceu como enxt position, garante que nao vai aparecer de novo antes do cavalo passar por la
+            if (pos[0] == dest[0] && pos[1] == dest[1]) {
+                found = true;
+                break;
+            }
+        }
+
+        const treatedPositions = filteredPostions.map((pos) => {
+            return { place: pos, path: [...current['path'], pos] }
+        });
+
+        queue.push(...treatedPositions);
     }
 }
 
-console.log("Path: ", knightMoves([0,0], [7,7]));
+console.log("Path: ", knightMoves([0, 0], [7, 7]));
