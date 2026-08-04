@@ -1,45 +1,45 @@
 # Knights Travails
 
-Projeto de algoritmos desenvolvido como parte da trilha JavaScript do [The Odin Project](https://www.theodinproject.com/lessons/javascript-knights-travails), com o objetivo de criar um algoritmo capaz de encontrar o menor caminho para o cavalo entre duas posições no tabuleiro de xadrez.
+Algorithm project developed as part of the JavaScript path of [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript), with the goal of creating an algorithm capable of finding the shortest path for a knight between two positions on a chessboard.
 
-## Objetivo do Projeto
+## Project Objective
 
-O objetivo principal foi praticar:
-- Modelagem de movimentos válidos de cavalo em um tabuleiro 8x8
-- Busca em largura (BFS) para encontrar o menor caminho
-- Controle de posições visitadas para evitar repetições
-- Reconstrução do caminho completo da origem ao destino
+The main objective was to practice:
+- Modeling valid knight moves on an 8x8 board
+- Breadth-first search (BFS) to find the shortest path
+- Tracking visited positions to avoid repetition
+- Reconstructing the full path from origin to destination
 
-## O que é?
+## What is it?
 
-Uma implementação em JavaScript de uma função `knightMoves(orig, dest)` que retorna o caminho mais curto entre duas casas de um tabuleiro 8x8, considerando os movimentos do cavalo.
+An implementation in JavaScript of a `knightMoves(orig, dest)` function that returns the shortest path between two squares on an 8x8 chessboard, considering knight movement rules.
 
-A função auxiliar `calculateNext(curPos)` gera os próximos movimentos válidos dentro dos limites do tabuleiro.
+The helper function `calculateNext(curPos)` generates the next valid moves within the board limits.
 
-## Como usar
+## How to use
 
-1. Entre na pasta do projeto:
+1. Enter the project folder:
    `Javascript/top-knights-travails`
-2. Execute o arquivo de demonstração:
+2. Run the demo file:
    `node index.js`
 
-## Funcionalidades
+## Features
 
-- **`calculateNext(curPos)`**: calcula todas as próximas posições válidas do cavalo
-- **`knightMoves(orig, dest)`**: retorna o menor caminho entre origem e destino
-- **Busca em largura (BFS)**: garante o menor número de movimentos
-- **Rastreamento de caminho**: retorna o percurso completo em formato de lista de coordenadas
+- **`calculateNext(curPos)`**: calculates all valid next knight positions
+- **`knightMoves(orig, dest)`**: returns the shortest path between origin and destination
+- **Breadth-first search (BFS)**: guarantees the smallest number of moves
+- **Path tracing**: returns the full route as a list of coordinates
 
-## Estrutura de Arquivos
+## File Structure
 
-- `index.js`: implementação das funções e exemplo de execução
+- `index.js`: implementation of the functions and execution example
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 - JavaScript
 
 ---
 
-Projeto desenvolvido seguindo as especificações de: [The Odin Project - Knights Travails](https://www.theodinproject.com/lessons/javascript-knights-travails)
+Project developed following the specifications of: [The Odin Project - Knights Travails](https://www.theodinproject.com/lessons/javascript-knights-travails)
 
-📍 **Repositório principal com todos os projetos**: [ChristoferLv/TheOdinProject](https://github.com/ChristoferLv/TheOdinProject)
+📍 **Main repository with all projects**: [ChristoferLv/TheOdinProject](https://github.com/ChristoferLv/TheOdinProject)
